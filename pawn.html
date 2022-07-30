@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			canvas {
+			    border:1px solid green;
+			    background-color: black;
+			}
+		</style>
+		<script src="./pawn.js"></script>
+	</head>
+	<body  onload="initGame()">		
+		<div>
+			<span>Pawn Game</span>
+			<span id="error" style="color: red"></span>
+		</div>
+		<div>
+			<div>
+				X: <input type="text" id="placeX" />
+				Y: <input type="text" id="placeY"/>
+				<button onmousedown="placePawn()"  onmouseup="clearmove()">Place</button>
+			</div>
+			<div>
+				<button onmousedown="moveX()" >Move X </button>
+				<button onmousedown="moveLeft()" onmouseup="clearmove()" > Move Left</button>
+				<button onmousedown="moveRight()" onmouseup="clearmove()"> Move Right</button>
+				<button onmousedown="moveUp()" onmouseup="clearmove()" > Move Up</button>
+				<button onmousedown="moveDown()" onmouseup="clearmove()"> Move Down</button>
+				<button onclick="report()" >Report </button>
+			</div>			
+		</div>
+		<div>
+			<span style="display: block">Report:</span>
+			<span>The pawn is at X : <span id="xpos"></span></span>
+			<span>The pawn is at Y : <span id="ypos"></span></span>
+		</div>
+	</body>
+</html>
